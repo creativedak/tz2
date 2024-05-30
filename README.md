@@ -137,3 +137,7 @@ plt.show()
 100000	1500
 1000000	12000
 Теперь ваш проект полностью настроен и готов к использованию!
+
+# NumberOperations
+
+![Java CI](https://github.com/creativedak/tz2/actions/workflows/ci.yml/badge.svg)
