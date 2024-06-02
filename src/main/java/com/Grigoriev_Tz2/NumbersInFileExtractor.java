@@ -1,30 +1,25 @@
+package com.Grigoriev_Tz2;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class NumberProcessor {
-    
+public class NumbersInFileExtractor {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the filename:");
-        String fileName = scanner.nextLine();
-        
         try {
-            List<Integer> numbers = readNumbersFromFile(fileName);
-            
-            System.out.println("Минимум: " + _min(numbers));
-            System.out.println("Максимум: " + _max(numbers));
-            System.out.println("Сумма: " + _sum(numbers));
-            System.out.println("Произведение: " + _mult(numbers));
-            
+            List<Integer> numbers = readNumbersFromFile("test.txt");
+            System.out.println("Минимальное число в файле: " + getMinimum(numbers));
+            System.out.println("Максимальное число в файле: " + getMaximum(numbers));
+            System.out.println("Сумма чисел в файле: " + getSumm(numbers));
+            System.out.println("Произведение чисел в файле: " + getMultiplication(numbers));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Ошибка при чтении файла: " + e.getMessage());
         }
     }
-    
+
     public static List<Integer> readNumbersFromFile(String fileName) throws IOException {
         List<Integer> numbers = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -38,8 +33,8 @@ public class NumberProcessor {
         }
         return numbers;
     }
-    
-    public static int _min(List<Integer> numbers) {
+
+    public static int getMinimum(List<Integer> numbers) {
         int min = Integer.MAX_VALUE;
         for (int number : numbers) {
             if (number < min) {
@@ -48,8 +43,8 @@ public class NumberProcessor {
         }
         return min;
     }
-    
-    public static int _max(List<Integer> numbers) {
+
+    public static int getMaximum(List<Integer> numbers) {
         int max = Integer.MIN_VALUE;
         for (int number : numbers) {
             if (number > max) {
@@ -58,16 +53,16 @@ public class NumberProcessor {
         }
         return max;
     }
-    
-    public static long _sum(List<Integer> numbers) {
+
+    public static long getSumm(List<Integer> numbers) {
         long sum = 0;
         for (int number : numbers) {
             sum += number;
         }
         return sum;
     }
-    
-    public static long _mult(List<Integer> numbers) {
+
+    public static long getMultiplication(List<Integer> numbers) {
         long mult = 1;
         for (int number : numbers) {
             mult *= number;
