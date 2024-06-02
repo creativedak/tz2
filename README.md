@@ -37,3 +37,9 @@ mvn test
 ```
 # Статус тестирования
 ![example workflow](https://github.com/creativedak/tz2/actions/workflows/ci.yml/badge.svg)
+
+# График
+![image](https://github.com/creativedak/tz2/assets/167773209/7c2057cb-4bf0-4d21-82c2-8f2bab02d958)
+
+Можно видеть линейную зависимость, так как все функции линейны
+
