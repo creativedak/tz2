@@ -35,3 +35,5 @@ mvn clean install
 ```bash
 mvn test
 ```
+# Статус тестирования
+![example workflow](https://github.com/creativedak/tz2/actions/workflows/ci.yml/badge.svg)
